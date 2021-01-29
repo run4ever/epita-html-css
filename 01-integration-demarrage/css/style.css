@@ -1,0 +1,372 @@
+@import "reset.css"; 
+@import "variables.css"; 
+
+
+body {
+    font-family: 'Roboto';
+color: #684f53;
+background: #f2f2f2;
+font-size: 16px;
+line-height: 1.4em;
+}
+
+h2 {
+color: var(--purple);
+font-size: 1.5rem;
+text-transform: uppercase;
+padding-left: 20px;
+font-family: 'Roboto Slab';
+}
+
+h3{
+    font-size: 1.2rem;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 200px) and (max-width: 991px) {
+
+    div.hero{
+        display: none;
+    }
+
+    div.container #description {
+        order: 2;
+    }
+
+    div.container #video {
+        order:1;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+        padding-left: 0px;
+        text-align: center;
+        line-height: 1.4em;
+
+    }        
+
+    
+
+    header img {
+        width: 100%;
+        }
+    
+        /* navigation */
+        nav {
+        background: #fff;
+        display: flex;
+        /* justify-content: space-between; */
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 3px 20px;
+        }
+    
+        nav .navlink {
+        display: flex;
+        justify-content: space-between;
+        flex-direction:column;
+        }
+    
+        nav .navlink a {
+        color: #a4243d;
+        font-size: 2em;
+        text-decoration: none;
+        margin: 5px 15px;
+        font-family: 'Roboto Slab';
+        padding-bottom: 15px;
+        padding-top: 15px;
+        }
+    
+        nav .navlink a:hover {
+            text-decoration: underline;
+        }
+    
+    
+        section{
+            background:#f2f2f2;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    
+        .container{
+            width: 96%;
+            margin: 0 auto;
+        }
+    
+        div.d-flex{
+            display: flex;
+            justify-content: center; /* espacement horizontal */
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    
+        div.d-flex-evenly {
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+        }
+    
+        h2 em.redend{
+            color:#f45d54;
+        }
+    
+    
+        /* c'est mieux d'utiliser hr car il a du sens */
+        section hr {
+            border: 0px;
+            border-top: 4px solid #f45d54;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+    
+        /*
+        CARDS
+        */
+    
+        .card {
+            width: 90%;
+            border: 1px solid #ccc;
+            padding: 10px 20px;
+            margin-bottom: 15px;
+            background: white;
+        }
+    
+        .card h3 {
+            color: #c54858;
+            text-align: center;
+            margin: 0;
+            font-size: 1.6rem;
+        }
+    
+        .card p {
+            color: #684f53;
+            margin : 10px;
+            text-align: center;
+            line-height: 1.7rem;
+        }
+    
+        .card img {
+    
+            width: 100%;
+            top: 0px;  
+            border-radius: 5px;
+        
+        }
+    
+        div.card hr{
+            border-top: 2px solid #c54858;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+    
+        .detail { 
+            line-height: 1.7rem;
+        }
+    
+        .detail-txt {
+            width: 98%;
+        }
+    
+        .detailicon {
+            font-size: 70px;
+            color: #f87e55;
+        }
+    
+        a:hover .detailicon {
+            color: #a4243d;
+        }
+    
+        footer{
+            background: #482537;
+            height: 200px;
+            color: white;
+            text-align: center;
+            padding-top: 30px;
+            line-height: 2rem;
+        }
+    
+    
+        div.footerlink a {
+            color:white;
+            margin-left: 10px;
+            margin-right: 10px;
+            text-underline-offset: 3px;
+            transition-duration: .3s;
+        }
+    
+        div.footerlink a:hover {
+            color:pink;
+        } 
+
+}
+
+@media screen and (min-width: 992px) {
+    /*
+    image du header
+    */
+    header img {
+    width: 100%;
+    }
+
+    /* navigation */
+    nav {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 20px;
+    }
+
+    nav .navlink {
+    display: flex;
+    justify-content: space-between;
+    }
+
+    nav .navlink a {
+    color: #a4243d;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin: 0 15px;
+    font-family: 'Roboto Slab';
+    }
+
+    nav .navlink a:hover {
+        text-decoration: underline;
+    }
+
+
+    section{
+        background:#f2f2f2;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .container{
+        width: 1100px;
+        margin: 0 auto;
+    }
+
+    div.d-flex{
+        display: flex;
+        justify-content: space-between; /* espacement horizontal */
+        flex-direction: row;
+    }
+
+    div.d-flex-evenly {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+
+    h2 em.redend{
+        color:#f45d54;
+    }
+
+
+    /* c'est mieux d'utiliser hr car il a du sens */
+    section hr {
+        border: 0px;
+        border-top: 4px solid #f45d54;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    /*
+    CARDS
+    */
+
+    .card {
+        width: 20%;
+        border: 1px solid #ccc;
+        padding: 10px 20px;
+        margin-bottom: 15px;
+        background: white;
+    }
+
+    .card h3 {
+        color: #c54858;
+        text-align: center;
+        margin: 0;
+        font-size: 1.6rem;
+    }
+
+    .card p {
+        color: #684f53;
+        margin : 10px;
+        text-align: center;
+        line-height: 1.7rem;
+    }
+
+    .card img {
+
+        width: 100%;
+        top: 0px;  
+        border-radius: 5px;
+    
+    }
+
+    div.card hr{
+        border-top: 2px solid #c54858;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .detail { 
+        line-height: 1.7rem;
+    }
+
+    .detail-txt {
+        width: 49%;
+    }
+
+    .detailicon {
+        font-size: 70px;
+        color: #f87e55;
+    }
+
+    a:hover .detailicon {
+        color: #a4243d;
+    }
+
+    footer{
+        background: #482537;
+        height: 200px;
+        color: white;
+        text-align: center;
+        padding-top: 30px;
+        line-height: 2rem;
+    }
+
+
+    div.footerlink a {
+        color:white;
+        margin-left: 10px;
+        margin-right: 10px;
+        text-underline-offset: 3px;
+        transition-duration: .3s;
+    }
+
+    div.footerlink a:hover {
+        color:pink;
+    }
+    
+
+    div.hero {
+        background-image: url("../img/images/1.jpg");
+        background-color: #f2f2F2; /*en cas de pb de chargement de l'image*/
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0px -250px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 4rem;
+        color: #fff;
+    }
+
+}
+

@@ -1,0 +1,204 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap-reboot.css';
+@import '..\node_modules\@fortawesome\fontawesome-free\css\fontawesome.min.css';
+@import 'variables.css';
+
+body{
+    font-size: 1em;
+}
+
+.d-flex-h {
+    display: flex;
+    flex-direction: row;
+}
+
+.d-flex-v {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stretch {
+    justify-content: stretch;
+}
+
+.spc-btwn {
+    justify-content: space-between;
+}
+
+aside {
+    width: var(--sidebar-width);
+    background: #3f0e40;
+    color: white;
+    height: 100vh;
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    top: 0; /* Stay at the top */
+    overflow-y: scroll;
+}
+
+
+aside::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+aside::-webkit-scrollbar-track {
+    background: violet;        /* color of the tracking area */
+  }
+  
+aside::-webkit-scrollbar-thumb {
+    background-color: #3f0e40;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 1px solid lightgrey;  /* creates padding around scroll thumb */
+  }
+
+div.main-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: var(--sidebar-width);
+    height: 100vh;
+}
+
+.main-list > li {
+    list-style: none;
+}
+
+/* chevron : enfant de 1er niveau */
+.main-list > li::before {
+    /* list-style-image:''; */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900; 
+    content: "\f0d7";
+    margin-right: 15px;
+}
+
+ul.under-list li {
+    padding-left: 10px;
+    list-style-type: '#';
+}
+
+ul.hide {
+    display: none;
+}
+
+
+ul.main-list li:hover+ul.hide {
+    display: block;
+}
+
+div.messages-list {
+    padding-left: var(--main-padding-left);
+    overflow-y: scroll;
+}
+
+div.messages-list::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+div.messages-list::-webkit-scrollbar-track {
+    background: orange;        /* color of the tracking area */
+  }
+  
+div.messages-list::-webkit-scrollbar-thumb {
+    background-color: blue;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid orange;  /* creates padding around scroll thumb */
+  }
+
+div.message {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+}
+
+div.avatar {
+    width: 40px;
+}
+
+div.msg-details {
+    padding-left: 10px;
+}
+
+div.msg-entete {
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+    padding-bottom: 5px;
+}
+
+div.auteur {
+    font-weight: 700;
+}
+
+div.heure {
+    margin-left: 10px;
+    font-size: .8rem;
+    color:lightgrey
+
+}
+
+div.avatar img {
+    height: 36px;
+    width: 36px;
+    border-radius: 5px;
+}
+
+div.entry-field {
+    margin-top:auto; 
+    bottom: 0;
+    height: 200px;
+}
+
+div.entry-field textarea {
+    margin: 5px var(--main-padding-left);
+    width: calc(100vw - var(--sidebar-width) - 3*var(--main-padding-left));
+    border-radius: 4px;
+}
+
+.saisie-et-boutons {
+    margin: 5px var(--main-padding-left);
+    width: calc(100vw - var(--sidebar-width) - 3*var(--main-padding-left));
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    height: 80px;
+    
+}
+
+.saisie-input {
+    height: 50%;
+    text-align: left;
+    width: 99%;
+}
+
+.saisie-input input {
+    border: 0px;   
+    width: 100%;
+    margin-top: 5px; 
+}
+
+div.saisie-boutons {
+    width: 100%;
+    background: #f8f8f8;
+    border-radius: 0px 0px 4px 4px;
+    height: 50%;
+    border-top: 1px solid #dddddd;
+}
+
+.border-right {
+    border-right: 1px solid lightgrey;
+}
+
+div.edit-btn {
+    width: 50px;
+    color: #5e5e5e;
+    text-align: center;
+    padding-top: 6px;
+}
+
+div.edit-btn:hover {
+    background: red;
+    cursor: pointer;
+    background-color: #efefef;
+}
+
+
