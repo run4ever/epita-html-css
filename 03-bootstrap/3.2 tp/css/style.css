@@ -98,6 +98,10 @@ section.section-3 {
     border-color: green;
 }
 
+.my-form-control:focus+label {
+    color: green;
+}
+
 .form-floating>.my-form-control {
     height: calc(3rem);
 }
