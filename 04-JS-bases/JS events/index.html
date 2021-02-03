@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Interaction</title>
+   <style>
+      .danger {
+         color: red;
+      }
+      .success {
+         color: green;
+      }
+      .info{
+          color: blue;
+      }
+      div{
+          padding:40px;
+          background: chocolate;
+      }
+   </style>
+</head>
+<body>
+   
+   <h1 id="title">Interaction</h1>
+   <p>Ce texte va changer</p>
+   <ul>
+      <li class="item">Item 1</li>
+      <li class="item">Item 2</li>
+      <li class="item">Item 3</li>
+   </ul>
+
+   <div>
+    <button>Clickez ICI</button>
+</div>
+   <a href="">Cliquez sur le lien</a>
+
+   <script>
+	/*
+       1 SAVOIR SELECTIONNER DES ELTS HTML
+      */
+      // Selectionner le H1 par son id
+      let titleElt = document.getElementById('title');
+      // document.querySelector('h1#title');
+      console.log(titleElt);
+
+      // selectionner le p par son nom de balise HTML
+      let paragraphElt = document.getElementsByTagName('p')[0];
+      // document.querySelector('p');
+      console.log(paragraphElt);
+
+      // selectionner les li par leur nom de class
+      let itemsElts = document.getElementsByClassName('item');
+      // document.querySelectorAll('ul li.item');
+
+
+      /*
+       2 SAVOIR MODIFIER LE DOM (la page HTML)
+         les elts HTML disposent de propriété et méthodes
+         - pour accéder aux informations
+         - pour setter des informations
+      */
+      // SAVOIR MODIFIER DU TEXTE OU DU HTML
+      // acceder le text d'un elt HTML
+      console.log(titleElt.textContent); // renvoie le text H1
+      // écrire le contenu texte d'un elt HTML
+      paragraphElt.textContent = "Ce texte a été remplacé";
+      // accéder et seter le contenu texte et/ou HTML
+      paragraphElt.innerHTML =  "Ce texte a été <strong>remplacé</strong>";
+
+      
+      // SAVOIR MANIPULER LES CLASS CSS
+      // avec l'objet classList
+      // ajouter/retirer/remplacer/
+      titleElt.classList.add('success'); // ajoute la class success à l'elt H1
+      titleElt.classList.add('blue'); // ajoute la class blue à l'elt H1 
+      titleElt.classList.remove('blue'); // retire la class blue à l'elt H1 
+      titleElt.classList.replace('success', 'danger'); // remplace la class success par danger
+      console.log( titleElt.classList.contains('danger') ); // return TRUE
+      
+      // SAVOIR AJOUTER DU STYLE CSS INLINE
+      // Syntaxe : elt.style.propriete = "valeur"
+      //paragraphElt.style.color = 'pink';
+      
+      
+      /*
+      	3 Savoir gérer les evenements (utilisateurs)
+          On POSE un écouteur d'event sur l'elt HTML
+          elt.addEventListener(nomDeLevent, functionAExecuter)
+          
+          ## noms d'events de la souris : click, dblclick, contextmenu, wheel, mouseover, mouseout
+          ## noms d'events du clavier  : keydown, keyup
+   
+          ## DOMContentLoaded     
+      */
+      let btnElt = document.querySelector('button');
+      
+      btnElt.addEventListener('click', function(ev) { 
+        ev.stopPropagation();
+      	titleElt.style.color = 'orange'
+      } );
+      
+      btnElt.addEventListener('dblclick', function() { 
+        btnElt.style.background = 'black';
+        btnElt.style.color='white';
+      } );
+
+      let divElt = document.querySelector('div');
+
+      divElt.addEventListener('click', function() { 
+        paragraphElt.classList.add('info');
+      } );
+
+      
+    /*
+
+    detecter evenement sur tous les li
+
+    */
+
+    let liTab = document.querySelectorAll('li');
+    console.log(liTab);
+
+    /* Dans une fonction appelée par un évènement et uniquement dans ce contexte, 
+      this vaut l'élément HTML sur lequel on a posé l'écouteur d'évènement
+    */
+    function showLiLabel(){
+        console.log(this);
+        console.log(this.textContent);
+        alert(this.textContent);
+    }
+
+    liTab.forEach(item => {
+        item.addEventListener('click', showLiLabel);
+    }); 
+      
+    // document.querySelector('body').addEventListener('dblclick',function(ev){
+    //     console.log(ev.target);
+    //     console.log(this);
+    // })
+      
+    /*
+    ev : récupère l'évènement
+        event.preventDefault()
+        bloquer le comportement par défaut
+    */
+
+    let linkElt = document.querySelector('a');
+    linkElt.addEventListener('click',function(ev){
+        ev.preventDefault();
+        console.log(ev);
+        paragraphElt.classList.add('info');
+    })
+
+
+    document.addEventListener('keyup',function(ev){
+        if(ev.ctrlKey && ev.key=='c'){console.log('Tu as fait CTRL + C');}
+    })
+
+
+  </script>
+
+</body>
+</html>

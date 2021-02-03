@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sélecteur de photos</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    
+<header>
+    <h1>Sélecteur de photos</h1>
+</header>
+
+<main>
+    <div class="container">
+        <ul id="photo-list">
+            <li data-index="0"><img src="img/1.jpg"></li>
+            <li data-index="1"><img src="img/2.jpg"></li>
+            <li data-index="2"><img src="img/3.jpg"></li>
+            <li data-index="3"><img src="img/4.jpg"></li>
+            <li data-index="4"><img src="img/5.jpg"></li>
+            <li data-index="5"><img src="img/6.jpg"></li>
+            <li data-index="6"><img src="img/7.jpg"></li>
+            <li data-index="7"><img src="img/8.jpg"></li>
+            <li data-index="8"><img src="img/9.jpg"></li>
+            <li data-index="9"><img src="img/10.jpg"></li>
+        </ul>
+        <p>Vous avez sélectionné <span id="nb-photos">0</span> photo(s)</p>
+    </div>
+
+</main>
+
+<!-- c'est mieux de charger les js à la fin, juste avant fermeture body 
+comme ça, le DOM est bien chargé, pas besoin de mettre cette condition dans js
+et si jamais le js ne se charge pas, cela ne plante pas le reste de la page
+-->
+<script src="js/interactions.js"></script>
+
+</body>
+</html>

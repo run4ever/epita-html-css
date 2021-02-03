@@ -1,0 +1,123 @@
+dossier js-interaction
+        > index.html
+        > script.js
+        
+        
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript-interaction</title>
+        <style>
+            .red {
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>La sélection</h1>
+        <p id="content">Ce contenu va être remplacé !!!</p>
+        
+        <blockquote>Super citation</blockquote>
+        
+        <ul>
+            <li>Element 1</li>
+            <li>Element 2</li>
+            <li>Element 3</li>
+        </ul>
+        
+        <button>Click moi!!!</button>
+        
+       <script>
+       // dans script.js
+       
+       /*   Selection
+            - getElementById() prend en parametre un id à sélectionner et retourne le 1er Elt trouvé
+            - getElementsByClassName() prend en paramètre la class CSS et retourne un tableau d'Elt
+            - getElementsByTagName() prend en paramètre un nom de balise et retourne un tableau d'Elt
+            
+            - querySelector() prend en paramètre une selection CSS et retourne le 1er Elt trouvé
+            - querySelectorAll() prend en paramètre une selection CSS et retourne un tableau d'Elt
+       */
+       
+       /*
+            les Modifications du DOM courantes(Document Object Model)
+            - Elt.textContent="le texte change"; modifie du texte à l'intérieur d'un Elt HTML sélectionné
+            - Elt.innerHTML="le html change" modifie du HTML à l'intérieur d'un Elt HTML sélectionné
+            - Elt.classList.add()
+                           .remove()
+                           .toggle()
+                           .contains()                   
+       */
+       
+       // JE SELECTIONNE UN ELEMENT HTML dans la page par son id "content"
+       var paragraph = document.getElementById("content");
+       console.log(paragraph);
+       
+       // SELECTIONNER LA BALISE H1
+       var title = document.querySelector("h1");
+       // REMPLACER SON CONTENU PAR LE TEXTE "la selection - la modification du DOM
+       title.textContent = "<span>la selection - la modification du DOM</span>";
+       
+       
+       // SELECTIONNER LA BALISE BLOCKQUOTE
+       var bloc = document.querySelector("blockquote");
+       
+      
+        
+       // JE MODIFIE LE DOM (ici je remplace le texte à l"intérieur de la balise p
+       paragraph.textContent = "Yes j'ai remplacé le contenu texte !";
+       
+       
+       
+       
+       // ON POSE UN ECOUTEUR D'EVENEMENT
+       var btn  = document.querySelector("button");
+       
+       // AJOUTER sur la balsie blockquote, LA CLASS red
+       function ajouterClass() {    
+        bloc.classList.add("red");
+       }
+       
+       btn.addEventListener('click', ajouterClass);
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+
+
+       
+       </script>
+    </body>
+    
+    
+</html>
+
+

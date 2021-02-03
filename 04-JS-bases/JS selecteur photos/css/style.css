@@ -1,0 +1,31 @@
+.container {
+    width: 900px;
+    margin: 0 auto;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+#photo-list li{
+    display: inline-block;
+    margin: 1em;
+    padding: .5em;
+    border-radius: 8px;
+    transition: background-color 0.5s;
+}
+
+ul#photo-list li:hover, ul#photo-list li.hover {
+    background-color: silver;
+    cursor:pointer;
+}
+
+ul#photo-list li.selected {
+    background-color: lightgreen;
+}
+
+#nb-photos {
+    color:red;
+    font-style: italic;
+    font-weight: 600;
+}
